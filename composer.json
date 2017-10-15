@@ -1,5 +1,5 @@
 {
-    "name": "MahdiMajidzadeh/Persianalize",
+    "name": "mahdimajidzadeh/persianalize",
     "type": "library",
     "description": "Laravel package for normalize Persian text",
     "keywords": [

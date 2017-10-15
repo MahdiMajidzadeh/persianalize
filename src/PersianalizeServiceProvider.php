@@ -1,6 +1,6 @@
 <?php
 
-namespace MahdiMajidzadeh\Persianalize;
+namespace mahdiMajidzadeh\persianalize;
 
 use Illuminate\Support\ServiceProvider;
 
