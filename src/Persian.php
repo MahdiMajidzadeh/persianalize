@@ -4,34 +4,33 @@ namespace mahdimajidzadeh\persianalize;
 
 class Persian
 {
-
     public function __construct()
     {
         // constructor body
     }
 
-    static public function numbers($numbers)
+    public static function numbers($numbers)
     {
         $numbers = self::numbers_ar($numbers);
         $numbers = self::numbers_en($numbers);
         return $numbers;
     }
     
-    static public function numbers_ar($numbers)
+    public static function numbers_ar($numbers)
     {
         $find = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
         $replace = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         return (string) str_replace($find, $replace, $numbers);
     }
 
-    static public function numbers_en($numbers)
+    public static function numbers_en($numbers)
     {
         $find = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
         $replace = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         return (string) str_replace($find, $replace, $numbers);
     }
 
-    static public function numbers_to_en($numbers)
+    public static function numbers_to_en($numbers)
     {
         $find = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
         $replace = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -41,7 +40,7 @@ class Persian
         return (string) str_replace($find, $replace, $numbers);
     }
 
-    static public function text($text)
+    public static function text($text)
     {
         $from = [
             // collection 1
@@ -197,14 +196,14 @@ class Persian
         return $text;
     }
 
-    static public function standard($string)
+    public static function standard($string)
     {
         $string = self::numbers_to_en($string);
         $string = self::text($string);
         return $string;
     }
 
-    static public function allpersian($string)
+    public static function allpersian($string)
     {
         $string = self::numbers($string);
         $string = self::text($string);
