@@ -9,32 +9,43 @@ class Persian
         // constructor body
     }
 
-    public static function numbers($numbers)
+    public static function numbers_fa($numbers)
     {
-        $numbers = self::numbers_ar($numbers);
-        $numbers = self::numbers_en($numbers);
+        $numbers = self::numbers_ar_fa($numbers);
+        $numbers = self::numbers_en_fa($numbers);
+        return $numbers;
+    }
+
+    public static function numbers_en($numbers)
+    {
+        $numbers = self::numbers_fa_en($numbers);
+        $numbers = self::numbers_ar_en($numbers);
         return $numbers;
     }
     
-    public static function numbers_ar($numbers)
+    public static function numbers_ar_fa($numbers)
     {
         $find = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
         $replace = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         return (string) str_replace($find, $replace, $numbers);
     }
 
-    public static function numbers_en($numbers)
+    public static function numbers_en_fa($numbers)
     {
         $find = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
         $replace = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         return (string) str_replace($find, $replace, $numbers);
     }
 
-    public static function numbers_to_en($numbers)
+    public static function numbers_ar_en($numbers)
     {
         $find = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
         $replace = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-        $numbers = str_replace($find, $replace, $numbers);
+        return (string) str_replace($find, $replace, $numbers);
+    }
+
+    public static function numbers_fa_en($numbers)
+    {
         $find = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         $replace = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
         return (string) str_replace($find, $replace, $numbers);
@@ -198,14 +209,14 @@ class Persian
 
     public static function standard($string)
     {
-        $string = self::numbers_to_en($string);
+        $string = self::numbers_en($string);
         $string = self::text($string);
         return $string;
     }
 
-    public static function allpersian($string)
+    public static function persian($string)
     {
-        $string = self::numbers($string);
+        $string = self::numbers_fa($string);
         $string = self::text($string);
         return $string;
     }
