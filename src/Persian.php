@@ -1,6 +1,6 @@
 <?php
 
-namespace mahdimajidzadeh\persianalize;
+namespace MahdiMajidzadeh\Persianalize;
 
 class Persian
 {
